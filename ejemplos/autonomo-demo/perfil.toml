@@ -1,0 +1,23 @@
+# Autónomo inventado para probar GestorIA. NIF de prueba: no existe.
+nif = "00000000T"
+nombre = "ANA DEMO PEREZ"
+tipo = "autonomo"
+
+[iva]
+regimen = "general"
+forma_pago = "I"
+
+[obligaciones]
+modelos = ["303", "390", "130", "100"]
+
+[autonomo]
+estimacion = "directa"            # directa | objetiva (módulos: no soportado)
+reta_mensual = "300.00"           # tu cuota de la Seguridad Social, la que te cargan cada mes
+                                  # (la fija la Orden de cotización del año por tramos de rendimiento neto;
+                                  #  compruébala en Importass). Sin ella la hucha no la cuenta.
+rendimiento_neto_anterior = "8500.00"   # rendimiento neto del año pasado: si fue ≤ 12.000 €, el 130 baja
+                                        # (art. 110.3.c RIRPF). Deja vacío si no aplica.
+
+[ayudas]                                # para `gestoria ayudas`: dónde estás y qué te describe
+region = "Madrid"
+palabras = ["autónomos", "formación"]

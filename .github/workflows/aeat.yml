@@ -1,0 +1,31 @@
+# Cada noche, contra las fuentes oficiales: el fichero del 303 sigue pasando el simulador de la
+# AEAT, el diseño de registro no ha cambiado de versión, y el calendario y el BOE responden.
+# Si Hacienda cambia algo, este workflow falla ese mismo día (GitHub avisa por correo).
+#
+# Opcional: con los secretos GESTORIA_NIF_REAL y GESTORIA_NOMBRE_REAL (un NIF dado de alta en el
+# censo) también se cotejan las casillas que recalcula el formulario. Sin ellos, ese test se salta.
+# El simulador OPEN no pide certificado y desde él no se puede presentar nada.
+name: fuentes oficiales
+
+on:
+  schedule:
+    - cron: "23 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  aeat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e '.[dev,sede]'
+      - run: python -m playwright install --with-deps chromium
+      - run: pytest -m live -q
+        env:
+          GESTORIA_NIF_REAL: ${{ secrets.GESTORIA_NIF_REAL }}
+          GESTORIA_NOMBRE_REAL: ${{ secrets.GESTORIA_NOMBRE_REAL }}

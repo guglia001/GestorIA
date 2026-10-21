@@ -1,0 +1,28 @@
+# Sociedad inventada para probar GestorIA: una tienda de bicicletas de segunda mano con taller.
+# NIF de prueba: no existe.
+nif = "B00000000"
+nombre = "BICIS DEMO SL"
+tipo = "sl"                 # sl | autonomo
+
+[iva]
+regimen = "rebu"            # general | rebu (bienes usados, arts. 135-139 LIVA)
+forma_pago = "I"            # I ingreso · U domiciliación · C compensar · D devolución
+
+[obligaciones]
+modelos = ["303", "390", "200", "347"]
+
+[is]
+nueva_creacion = true       # 15 % el primer período con base positiva y el siguiente (art. 29.1 LIS)
+
+[ayudas]                    # para `gestoria ayudas`: dónde estás y qué te describe
+region = "Mallorca"         # tu provincia o comunidad, como la llama la Base de Datos Nacional de Subvenciones
+palabras = ["comercio", "bicicleta", "digitalización"]
+
+# Con certificado (opcional), para las órdenes de la sede. Todo en solo lectura.
+# [sede]
+# certificado = "~/certs/empresa.p12"                      # el de representante de la sociedad
+# clave_fichero = "~/.config/gestoria/clave_empresa.txt"   # permisos 600; o $GESTORIA_CERT_CLAVE
+#
+# [sede.personal]                                          # el tuyo de persona física (DEHú, Seguridad Social)
+# certificado = "~/certs/yo.p12"
+# clave_fichero = "~/.config/gestoria/clave_yo.txt"        # o $GESTORIA_CERT_CLAVE_PERSONAL

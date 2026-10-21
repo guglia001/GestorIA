@@ -1,0 +1,6 @@
+# Lo que no está en los libros y la hucha necesita, con su fuente.
+compensar_pendiente = "0.00"
+fuente = "303 del 4T-2025: casilla [87] = 0,00 (justificante)."
+
+[pagado_este_anio]        # lo ya ingresado este año, del justificante de cada modelo
+"130" = ["0.00", "0.00"]   # 1T y 2T de 2026 salieron a 0 (las retenciones cubrían el 20 %)

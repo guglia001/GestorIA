@@ -1,0 +1,8 @@
+fecha;factura;cliente;nif_cliente;regimen;tipo;base;cuota;total;coste;rectifica;retencion
+2026-01-15;2026-001;Agencia Demo SL;B00000026;general;21;1500,00;315,00;1815,00;;;225,00
+2026-02-10;2026-002;Agencia Demo SL;B00000026;general;21;1200,00;252,00;1452,00;;;180,00
+2026-04-05;2026-003;Particular Uno;;general;21;400,00;84,00;484,00;;;
+2026-05-20;2026-004;Agencia Demo SL;B00000026;general;21;1500,00;315,00;1815,00;;;225,00
+2026-07-08;2026-005;Tienda Demo SL;B00000034;general;21;900,00;189,00;1089,00;;;
+2026-09-30;2026-006;Agencia Demo SL;B00000026;general;21;1500,00;315,00;1815,00;;;225,00
+2026-10-06;2026-007;Particular Dos;;general;21;250,00;52,50;302,50;;;

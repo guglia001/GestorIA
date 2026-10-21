@@ -1,0 +1,36 @@
+# GestorIA: los flujos programados. Copia lo que quieras a `crontab -e`.
+# Cambia la carpeta, la ruta de `gestoria` (p. ej. /home/tu-usuario/GestorIA/.venv/bin/gestoria) y el correo.
+GESTORIA_CARPETA=/home/tu-usuario/mi-empresa
+G=/home/tu-usuario/GestorIA/.venv/bin/gestoria
+F=/home/tu-usuario/mi-empresa/salida/vigia.txt
+
+# Cada día a las 7:30, si tienes certificado: el vigía de la sede (notificaciones de la AEAT y de la
+# DEHú, deudas, alertas, caducidad del certificado). Solo escribe cuando aparece algo rojo NUEVO.
+30 7 * * *     $G vigia > $F 2>&1; [ $? -eq 2 ] && mail -s "GestorIA: algo nuevo en la sede" tu@correo < $F
+
+# Cada mañana laborable a las 8:30: el panel. Sale con código 2 si hay algo en rojo.
+30 8 * * 1-5   $G hoy >> $GESTORIA_CARPETA/salida/hoy.log 2>&1
+
+# Lunes a las 8:45: el informe de la semana en Markdown (salida/semana_AAAA-WNN.md).
+45 8 * * 1     $G semana > /dev/null 2>> $GESTORIA_CARPETA/salida/errores.log
+
+# Día 2 de enero, abril, julio y octubre a las 9:00: el cierre del IVA del trimestre que acaba de cerrar.
+0 9 2 1,4,7,10 *   $G trimestre > /dev/null 2>> $GESTORIA_CARPETA/salida/errores.log
+
+# Presentar NO va en el cron: `gestoria presentar 303` necesita tu conformidad para cada declaración.
+
+# Día 5 de cada mes a las 8:00: el banco del mes, con los extractos que hayas dejado en banco/.
+0 8 5 * *      $G banco > /dev/null 2>> $GESTORIA_CARPETA/salida/errores.log
+
+# Día 21 de enero, abril, julio y octubre a las 9:00, con certificado: lo presentado contra tus libros.
+0 9 21 1,4,7,10 *  $G cotejar 303 >> $GESTORIA_CARPETA/salida/cotejo.log 2>&1
+
+# Día 1 de cada mes a las 7:00, con certificado: el chequeo completo (salida/chequeo_AAAA-MM-DD.md).
+0 7 1 * *      $G chequeo > /dev/null 2>> $GESTORIA_CARPETA/salida/errores.log
+
+# Día 1 de cada mes a las 8:30: las ayudas y subvenciones publicadas para pymes y autónomos en tu zona
+# (salida/ayudas_AAAA-MM-DD.md). Las pide la persona en la sede del órgano: GestorIA solo las encuentra.
+30 8 1 * *     $G ayudas > /dev/null 2>> $GESTORIA_CARPETA/salida/errores.log
+
+# 3 de enero a las 9:30: el año en una hoja (IVA por trimestres, IS/IRPF, 347, calendario del cierre).
+30 9 3 1 *     $G anual > /dev/null 2>> $GESTORIA_CARPETA/salida/errores.log

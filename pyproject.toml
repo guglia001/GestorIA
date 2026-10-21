@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gestoria"
+version = "0.2.0"
+description = "GestorIA: tu agente de IA hace de gestor en España (SL y autónomos): lleva tu contabilidad, te dice qué vence y cuánto apartar, prepara y revisa tus impuestos y los presenta solo con tu conformidad. Con tu certificado, mira en solo lectura lo que Hacienda, la Seguridad Social y la DEHú saben de ti."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = ["openpyxl>=3.1"]
+
+[project.optional-dependencies]
+sede = ["playwright>=1.45", "cryptography>=42"]
+manuales = ["pypdf>=4"]
+dev = ["pytest>=8", "cryptography>=42"]
+docs = ["playwright>=1.45", "pillow>=10"]  # docs/capturas.py, las capturas del README
+
+[project.scripts]
+gestoria = "gestoria.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["gestoria*"]
+
+[tool.setuptools.package-data]
+gestoria = ["disenos/*.xlsx"]
+
+[tool.pytest.ini_options]
+markers = ["live: sale a la red (simulador de la AEAT, BOE, calendario)"]
+addopts = "-m 'not live'"

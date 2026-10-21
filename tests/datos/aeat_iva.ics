@@ -1,0 +1,49 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:IVA
+X-WR-TIMEZONE:Europe/Madrid
+X-WR-CALDESC:Impuesto sobre el Valor Añadido
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261020
+DTEND;VALUE=DATE:20261021
+DTSTAMP:20261020T150004Z
+UID:0f6ennr3moihsgerke0h0mmqhb@google.com
+CREATED:20251201T112151Z
+DESCRIPTION:<p></p><ul><li>Septiembre 2026. Declaración recapitulativa de o
+ peraciones intracomunitarias: 349</li><li>Tercer trimestre 2026. Autoliquid
+ ación: 303</li><li>Tercer trimestre 2026. Declaración-liquidación no periód
+ ica: 309</li><li>Tercer trimestre 2026. Declaración recapitulativa de opera
+ ciones intracomunitarias: 349</li><li>Tercer trimestre 2026. Operaciones as
+ imiladas a las importaciones: 380</li><li>Solicitud de devolución de cuotas
+  reembolsadas a viajeros por empresarios en recargo de equivalencia: 308</l
+ i><li>Solicitud de devolución por sujetos pasivos en el régimen simplificad
+ o del IVA y que ejerzan la actividad de transporte de viajeros o de mercanc
+ ías por carretera\, por adquirir determinados medios de transporte: 308 </l
+ i><li>Reintegro de compensaciones en el régimen especial de la agricultura\
+ , ganadería y pesca: 341</li></ul><p></p><br><br><br><p><br></p>
+LAST-MODIFIED:20251201T112152Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:IVA
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261030
+DTEND;VALUE=DATE:20261031
+DTSTAMP:20261020T150004Z
+UID:7jokd7hg1pi6bdo7of0bfp4411@google.com
+CREATED:20251201T113146Z
+DESCRIPTION:<ul><li>Septiembre 2025. Autoliquidación: 303</li><li>Septiembr
+ e 2026. Grupo de entidades\, modelo individual: 322</li><li>Septiembre 2026
+ . Grupo de entidades\, modelo agregado: 353</li><li><span>Septiembre 202. O
+ peraciones asimiladas a las importaciones: 380</span></li></ul>
+LAST-MODIFIED:20251209T123856Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:IVA
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,4 @@
+fecha;factura;proveedor;nif_proveedor;base;tipo;cuota;gasto;origen;deducible
+2026-07-15;T-0715;Transportes Demo SL;B00000026;120,00;21;25,20;corriente;interior;si
+2026-08-20;R-0820;Recambios Demo SL;B00000034;180,00;21;37,80;corriente;interior;si
+2026-09-01;SAAS-09;Software Demo Ltd;IE0000000X;20,00;21;;corriente;intracomunitaria;si

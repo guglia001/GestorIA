@@ -1,0 +1,6 @@
+fecha;factura;proveedor;nif_proveedor;base;tipo;cuota;gasto;origen;deducible
+2026-01-31;TEL-01;Telefonia Demo SA;A00000042;30,00;21;6,30;corriente;interior;si
+2026-03-02;PC-2026;Informatica Demo SL;B00000059;1200,00;21;252,00;inversion;interior;si
+2026-04-30;TEL-04;Telefonia Demo SA;A00000042;30,00;21;6,30;corriente;interior;si
+2026-06-15;SAAS-06;Software Demo Ltd;IE0000000X;60,00;21;;corriente;intracomunitaria;si
+2026-09-30;GES-09;Gestoria Demo SL;B00000067;90,00;21;18,90;corriente;interior;si

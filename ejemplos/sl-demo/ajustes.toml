@@ -1,0 +1,10 @@
+# Saldo a compensar de periodos anteriores (casilla [110]), con su fuente.
+compensar_pendiente = "0.00"
+fuente = "Empresa nueva: sin 303 anteriores."
+
+[contabilidad]
+capital_social = "3000.00"    # escritura de constitución: 3.000 € desembolsados en la cuenta de la sociedad
+# cuenta_ventas = "700"       # 700 ventas de mercaderías (por defecto en una SL) · 705 prestaciones de servicios
+
+[cuentas]                     # la cuenta de gasto de cada proveedor, si la que deduce GestorIA no vale
+"Recambios Demo SL" = "600"
