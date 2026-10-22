@@ -10,3 +10,5 @@ salida/
 *.pem
 *.key
 clave*.txt
+# índice de graft (herramienta local)
+graft/

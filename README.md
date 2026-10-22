@@ -30,8 +30,32 @@ presenta, pero solo si tú le dices que sí.
 
 Tu gestoría tiene 80 clientes y no puede mirar lo tuyo con lupa. GestorIA solo te tiene a ti.
 
-Es para autónomos y pequeñas empresas en España. Funciona con tu asistente de IA (Claude Code,
-Codex…) o a mano, desde la terminal. Es gratis y de código abierto.
+Es para autónomos y empresas en España. Funciona con tu asistente de IA (Claude Code,
+Codex…) o a mano, desde la terminal.
+
+## Instálalo con tu agente
+
+Abre Claude Code en la carpeta de tu proyecto (o en una vacía) y pega uno de estos dos mensajes. Tu
+agente lo instala, lo prueba con la empresa de ejemplo y te prepara tu carpeta. Antes te pregunta lo
+que necesita: si eres SL o autónomo, tu NIF, dónde estás y si tienes certificado digital. No se
+inventa nada que no le digas.
+
+**Con el panel**, para ver tus cuentas en el navegador:
+
+```text
+Instala GestorIA en este proyecto, con el panel web.
+Clona https://github.com/guglia001/GestorIA en ~/GestorIA (si ya está, actualízalo), lee ~/GestorIA/INSTALAR.md y síguelo paso a paso.
+Pregúntame lo que necesites de mi empresa y no te inventes ningún dato.
+```
+
+**Sin el panel**, solo con tu agente y la terminal:
+
+```text
+Instala GestorIA en este proyecto, sin el panel web.
+Clona https://github.com/guglia001/GestorIA en ~/GestorIA (si ya está, actualízalo), lee ~/GestorIA/INSTALAR.md y síguelo paso a paso.
+Pregúntame lo que necesites de mi empresa y no te inventes ningún dato.
+```
+
 
 ## Tus cuentas, en el navegador
 
@@ -57,12 +81,6 @@ El panel corre en `127.0.0.1`, solo en tu ordenador, y no carga nada de internet
 un fichero, `gestoria web --fichero` te deja un único HTML. Si prefieres la terminal,
 `gestoria contabilidad`.
 
-> [!NOTE]
-> GestorIA no emite facturas: el panel enseña las que hace tu programa de facturación. Un programa
-> que emite facturas tiene que cumplir Verifactu (RD 1007/2023). Esta contabilidad tampoco sustituye
-> al libro diario que una sociedad legaliza en el Registro Mercantil (arts. 25-27 del Código de
-> Comercio). Y todavía no calcula amortizaciones ni existencias finales: cuando hacen falta, te lo
-> dice.
 
 ## Qué hace por ti
 
@@ -91,32 +109,6 @@ un fichero, `gestoria web --fichero` te deja un único HTML. Si prefieres la ter
 - **No presenta nada sin tu sí.** Antes tiene que pasar la revisión entera, ensayarlo en el entorno
   de pruebas de Hacienda y recibir tu conformidad, con una frase que solo vale para esa declaración.
 
-Y no es una promesa: está en el código. Fuera de `gestoria presentar`, el navegador con el que entra
-en las sedes no puede pulsar «Firmar», «Presentar», «Pagar» ni abrir una notificación, y los tests
-lo comprueban.
-
-## Instálalo con tu agente
-
-Abre Claude Code en la carpeta de tu proyecto (o en una vacía) y pega uno de estos dos mensajes. Tu
-agente lo instala, lo prueba con la empresa de ejemplo y te prepara tu carpeta. Antes te pregunta lo
-que necesita: si eres SL o autónomo, tu NIF, dónde estás y si tienes certificado digital. No se
-inventa nada que no le digas.
-
-**Con el panel**, para ver tus cuentas en el navegador:
-
-```text
-Instala GestorIA en este proyecto, con el panel web.
-Clona https://github.com/TU-USUARIO/GestorIA en ~/GestorIA (si ya está, actualízalo), lee ~/GestorIA/INSTALAR.md y síguelo paso a paso.
-Pregúntame lo que necesites de mi empresa y no te inventes ningún dato.
-```
-
-**Sin el panel**, solo con tu agente y la terminal:
-
-```text
-Instala GestorIA en este proyecto, sin el panel web.
-Clona https://github.com/TU-USUARIO/GestorIA en ~/GestorIA (si ya está, actualízalo), lee ~/GestorIA/INSTALAR.md y síguelo paso a paso.
-Pregúntame lo que necesites de mi empresa y no te inventes ningún dato.
-```
 
 Tus datos se quedan en `~/.gestoria/`, fuera de cualquier repositorio. Lo que hará el agente, paso
 a paso, está en [`INSTALAR.md`](INSTALAR.md): léelo antes si quieres. Y si prefieres hacerlo tú,
@@ -394,7 +386,7 @@ leen, y las presentaciones que tú autorizas, una a una.
 autónoma:
 
 ```bash
-git clone https://github.com/TU-USUARIO/GestorIA && cd GestorIA
+git clone https://github.com/guglia001/GestorIA && cd GestorIA
 python3 -m venv .venv && .venv/bin/pip install -e '.[sede,manuales]'
 .venv/bin/python -m playwright install chromium          # el navegador para el simulador y las sedes
 export GESTORIA_CARPETA=ejemplos/sl-demo                 # o ejemplos/autonomo-demo
